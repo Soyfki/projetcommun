@@ -14,7 +14,7 @@ namespace SQL_Utilisateurs
             // Créer d'un utilisateur à ajouter
             Utilisateurs utilisateur = new Utilisateurs();
             utilisateur.Id = 1;
-            utilisateur.Nom = "Ford";
+            utilisateur.Nom = "Dupond";
             utilisateur.Prenom = "Harry";
             utilisateur.Tel = "0365985246";
             utilisateur.Ville = "Douai";
