@@ -10,3 +10,6 @@ C:\Users\adessinges\Documents\Visual Studio 2012\Projects\SQL_Utilisateurs\SQL_U
 C:\Users\59013-87-02\projetcommun-1\SQL_Utilisateurs\bin\Debug\SQL_Utilisateurs.exe.config
 C:\Users\59013-87-02\projetcommun-1\SQL_Utilisateurs\obj\Debug\SQL_Utilisateurs.exe
 C:\Users\59013-87-02\projetcommun-1\SQL_Utilisateurs\obj\Debug\SQL_Utilisateurs.pdb
+C:\Users\59013-87-01\projetcommun\SQL_Utilisateurs\bin\Debug\SQL_Utilisateurs.exe.config
+C:\Users\59013-87-01\projetcommun\SQL_Utilisateurs\obj\Debug\SQL_Utilisateurs.exe
+C:\Users\59013-87-01\projetcommun\SQL_Utilisateurs\obj\Debug\SQL_Utilisateurs.pdb

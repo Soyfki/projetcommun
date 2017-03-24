@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
+using System;
 
 namespace SQL_Utilisateurs
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // Créer d'un utilisateur à ajouter
             Utilisateurs utilisateur = new Utilisateurs();
@@ -54,7 +50,7 @@ namespace SQL_Utilisateurs
 
             Console.WriteLine("Supprime la ligne 3");
             bdd.OuvreConnexion();
-            
+
             utilisateur.Id = 3;
             utilisateur.Nom = "Milner";
             utilisateur.Prenom = "Edith";
@@ -81,7 +77,7 @@ namespace SQL_Utilisateurs
             bdd.FermeConnexion();
 
             Console.WriteLine("Vérification de la modification :");
-            bdd.OuvreConnexion();          
+            bdd.OuvreConnexion();
             bdd.LireUtilisateur();
             bdd.FermeConnexion();
 
@@ -93,9 +89,8 @@ namespace SQL_Utilisateurs
             utilisateur.Nom = "Milner";
             utilisateur.Prenom = "Edith";
             utilisateur.Tel = "0456321685";
-            utilisateur.Ville = "Roubaix";
+            utilisateur.Ville = "Toulon";
             bdd.AddUtilisateur(utilisateur);
-
 
             string reponse;
             Console.WriteLine("\n" + "Voulez-vous vider la table (O/N) ?");
@@ -113,7 +108,6 @@ namespace SQL_Utilisateurs
 
             Console.WriteLine("\n" + "Appuyer sur une touche pour fermer l'application...");
             Console.ReadLine();
-            
         }
     }
 
@@ -121,6 +115,7 @@ namespace SQL_Utilisateurs
     {
         //  Création des propriétés
         public int Id { get; set; }
+
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public string Tel { get; set; }
@@ -134,7 +129,6 @@ namespace SQL_Utilisateurs
 
     public class Bdd
     {
-
         private MySqlConnection connection;
         private MySqlDataAdapter MyAdapter;
         private MySqlDataReader rdr;
@@ -207,7 +201,6 @@ namespace SQL_Utilisateurs
 
             if (rdr != null)
             {
-
                 while (rdr.Read())
                 {
                     int iid = Int32.Parse(rdr["id"].ToString());
@@ -216,9 +209,8 @@ namespace SQL_Utilisateurs
                     string stel = rdr["tel"].ToString();
                     string sville = rdr["ville"].ToString();
                     Console.WriteLine("id = " + iid + " nom = " + snom + " prenom= " + sprenom + " tel= " + stel + " ville= " + sville);
-
                 }
-            }          
+            }
         }
 
         // Méthode pour supprimer un utilisateur
@@ -241,7 +233,6 @@ namespace SQL_Utilisateurs
 
                 // Exécution de la commande SQL
                 cmd.ExecuteNonQuery();
-                      
             }
             catch (Exception ex)
             {
@@ -252,7 +243,6 @@ namespace SQL_Utilisateurs
         // Méthode pour update un utilisateur
         public void UpdateUtilisateur(Utilisateurs utilisateurs)
         {
-
             try
             {
                 // Création d'une commande SQL en fonction de l'objet connection
@@ -290,7 +280,6 @@ namespace SQL_Utilisateurs
 
                 // Exécution de la commande SQL
                 cmd.ExecuteNonQuery();
-
             }
             catch (Exception ex)
             {
